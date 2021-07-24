@@ -3,22 +3,37 @@ require('dotenv').config()
 const morgan = require('morgan')
 const helmet = require('helmet')
 const mongoose = require('mongoose')
+const userRoute = require('./routes/users')
+const authRoute = require('./routes/auth')
 
-mongoose.connect(process.env.DATA_BASE, { useNewUrlParser: true }, (param) => {
-  console.log(param)
-  console.log('db connected')
-})
+const PORT = process.env.PORT
+
+mongoose.connect(
+  process.env.DATA_BASE,
+  {useUnifiedTopology: true, useNewUrlParser: true,useCreateIndex:true },
+  (err, data) => {
+    if (err) {
+      console.log('faild to connect with db')
+    } else {
+      console.log('db connected')
+    }
+  }
+)
 
 const app = express()
 
-app.use(morgan())
+app.use(morgan('common'))
 app.use(helmet())
 app.use(express.json())
 
-const PORT = process.env.PORT
+app.use('/api/users', userRoute)
+app.use('/api/auth', authRoute)
 
 app.get('/', (req, res) => {
   res.send('hello from lama dev social media app')
 })
 
-app.listen(PORT, () => console.log(`server listenning on port ${PORT}`))
+app.listen(PORT, () => {
+  console.clear()
+  console.log(`server listenning on port ${PORT}`)
+})
