@@ -19,11 +19,11 @@ const UserSchema = mongoose.Schema(
       require: true,
       min: 6,
     },
-    any: {
-      type: String,
-      require: true,
-      unique: true,
-    },
+    // any: {
+    //   type: String,
+    //   require: true,
+    //   unique: true,
+    // },
     profilePicture: {
       type: String,
       default: '',
