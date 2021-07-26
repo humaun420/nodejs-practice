@@ -10,9 +10,10 @@ const PORT = process.env.PORT
 
 mongoose.connect(
   process.env.DATA_BASE,
-  {useUnifiedTopology: true, useNewUrlParser: true,useCreateIndex:true },
+  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },
   (err, data) => {
     if (err) {
+      // console.log(err)
       console.log('faild to connect with db')
     } else {
       console.log('db connected')
