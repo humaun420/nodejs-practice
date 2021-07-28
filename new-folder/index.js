@@ -1,4 +1,5 @@
 const express = require('express')
+const User = require('./models/User')
 require('dotenv').config()
 const morgan = require('morgan')
 const helmet = require('helmet')
@@ -10,7 +11,12 @@ const PORT = process.env.PORT
 
 mongoose.connect(
   process.env.DATA_BASE,
-  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  },
   (err, data) => {
     if (err) {
       // console.log(err)
@@ -30,8 +36,9 @@ app.use(express.json())
 app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
 
-app.get('/', (req, res) => {
-  res.send('hello from lama dev social media app')
+app.get('/', async (req, res) => {
+  const users = await User.find()
+  res.status(200).json(users)
 })
 
 app.listen(PORT, () => {
