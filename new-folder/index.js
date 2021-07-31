@@ -6,6 +6,7 @@ const helmet = require('helmet')
 const mongoose = require('mongoose')
 const userRoute = require('./routes/users')
 const authRoute = require('./routes/auth')
+const postRoute = require('./routes/post')
 
 const PORT = process.env.PORT
 
@@ -35,6 +36,7 @@ app.use(express.json())
 
 app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
+app.use('/api/post', postRoute)
 
 app.get('/', async (req, res) => {
   const users = await User.find()
