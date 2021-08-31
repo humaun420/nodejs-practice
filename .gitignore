@@ -25,7 +25,13 @@ yarn-error.log*
 =======
 node_modules
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a4d313e (first commit after instalation)
 =======
 .env
 >>>>>>> 9a6130d (second commit after creating server and some modification)
+=======
+.env
+=======
+>>>>>>> b3f70b8 (nothing new)
+>>>>>>> fda9adf (nothing new)
