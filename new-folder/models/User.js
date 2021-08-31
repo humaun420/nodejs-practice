@@ -44,9 +44,9 @@ const UserSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    timestamps: true,
-  }
-  // { timestamps: true }
+    // timestamps: true,
+  },
+  { timestamps: true }
 )
 
 module.exports = new mongoose.model('user', UserSchema)
