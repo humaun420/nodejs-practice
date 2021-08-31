@@ -41,7 +41,7 @@
 =======
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./new-folderindex.js",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^10.0.0",
@@ -49,6 +49,14 @@
     "helmet": "^4.6.0",
     "mongoose": "^5.13.3",
     "morgan": "^1.10.0"
+<<<<<<< HEAD
 >>>>>>> a4d313e (first commit after instalation)
+=======
+  },
+  "scripts": {
+    "start": "node ./new-folder/index.js",
+    "server": "nodemon ./new-folder/index.js",
+    "dev": ""
+>>>>>>> 9a6130d (second commit after creating server and some modification)
   }
 }
