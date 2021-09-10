@@ -1,0 +1,32 @@
+.online-friend-list {
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+}
+.online-friend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.friend-img-container {
+  margin-right: 10px;
+  position: relative;
+}
+.friend-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.online {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgb(68, 73, 68);
+  top: -2;
+  right: 0;
+  border: 2px solid white;
+}
+.friend-name {
+  font-weight: 500;
+}
